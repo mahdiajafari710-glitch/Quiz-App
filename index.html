@@ -1,25 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeQuiz - Learn Web Development</title>
+  <link rel="stylesheet" href="Css/Style.css" />
+
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Quiz App</h1>
-            
-            <nav>
-                <a href="#">Study</a>
-                <a href="#">All Question</a>
-                <a href="#">Add Question</a>
-            </nav>
-        </header> 
-        
+  <header><h1> Quiz App</h1></header>
 
-        
+  <main>
+    <section class="welcome">
+      <h2>Learn a little. Build a lot!</h2>
+      <p>Practice HTML, CSS and JavaScript with study cards, questions, and your own notes.</p>
+      <p><strong id="total-count">50</strong> questions · <strong id="my-count">0</strong> added by you</p>
+    </section>
 
-    </div>
+    <nav>
+      <button class="active" data-page="study"> Study Cards</button>
+      <button data-page="all-questions"> All Questions</button>
+      <button data-page="add-question"> Add Question</button>
+    </nav>
+
+    <section id="study" class="page">
+      <div class="card">
+        <p><span class="tag" id="card-category">HTML</span><span class="tag" id="card-difficulty">Easy</span></p>
+        <p id="card-number">Question 1</p>
+        <h2 id="card-question">What does HTML stand for?</h2>
+        <div id="card-answer" class="answer hidden"></div>
+        <button id="show-answer">Show answer</button>
+        <button id="hide-answer" class="light-button">Hide answer</button>
+
+        <div class="feedback">
+          <h3>How difficult was this question for you?</h3>
+          <button class="rating" data-rating="Easy"> Easy</button>
+          <button class="rating" data-rating="Medium"> Medium</button>
+          <button class="rating" data-rating="Hard"> Hard</button>
+          <p id="rating-message"></p>
+        </div>
+
+        <div class="button-row">
+          <button id="previous">← Previous</button>
+          <span id="card-count">1 / 50</span>
+          <button id="next">Next →</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="all-questions" class="page hidden">
+      <h2>All Questions</h2>
+      <div class="filters">
+        <input id="search" type="search" placeholder="Search questions or answers...">
+        <select id="category-filter">
+          <option value="all">All topics</option><option>HTML</option><option>CSS</option><option>JavaScript</option>
+        </select>
+        <select id="difficulty-filter">
+          <option value="all">All levels</option><option>Easy</option><option>Medium</option><option>Hard</option>
+        </select>
+      </div>
+      <div id="question-list"></div>
+      <p id="no-results" class="hidden">No questions found. Try another search.</p>
+    </section>
+
+    <section id="add-question" class="page hidden">
+      <h2>Add Your Own Question</h2>
+      <form id="question-form">
+        <p>Your questions are saved in this browser on this device.</p>
+        <label for="new-category">Topic</label>
+        <select id="new-category" required>
+          <option value="">Choose a topic</option><option>HTML</option><option>CSS</option><option>JavaScript</option>
+        </select>
+
+        <label for="new-question">Question</label>
+        <textarea id="new-question" required placeholder="Write your question here..."></textarea>
+
+        <label for="new-answer">Answer</label>
+        <textarea id="new-answer" required placeholder="Write the answer here..."></textarea>
+
+        <label for="new-difficulty">Difficulty</label>
+        <select id="new-difficulty"><option>Easy</option><option>Medium</option><option>Hard</option></select>
+
+        <button type="submit">Save Question</button>
+        <p id="form-message" class="message"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer> Made by:Mahdia Jafari <br>
+     Quiz App · Keep learning and keep building!</footer>
+
+     <script src="script/script.js"></script>
+     
 </body>
-</html>
+</html>    
