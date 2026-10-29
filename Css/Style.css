@@ -1,14 +1,15 @@
- body {
+
+    body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: #f0f6ff;
-      color: #111824;
+      color: #1e293b;
       line-height: 1.6;
     }
 
     header {
       background: white;
-      padding: 10px;
+      padding: 18px;
       border-bottom: 1px solid #dbeafe;
     }
 
@@ -34,8 +35,8 @@
     }
 
     .welcome {
-      background: #2c56d3;
-      color: rgb(246, 240, 240);
+      background: #2563eb;
+      color: white;
     }
 
     .welcome h2 { margin-top: 0; }
@@ -52,8 +53,8 @@
     }
 
     button {
-      background: #426ae4;
-      color: rgb(240, 236, 236);
+      background: #2563eb;
+      color: white;
       border: 0;
       border-radius: 8px;
       padding: 10px 14px;
@@ -61,35 +62,19 @@
       margin: 3px;
     }
 
-    button:hover {
-       background: #2a4bac;
-       }
-    nav button { 
-      flex: 1; min-width: 130px;
-    }
-    nav button.active {
-       background: #204eab; 
-      }
-    .light-button {
-       background: #dbeafe; color: #1d4ed8; 
-      }
-    .rating.active {
-       background: #163b91;
-       }
-    .light-button:hover { 
-      background: #bfdbfe; 
-    }
-    .delete-button { 
-      background: #fee2e2; color: #b91c1c; 
-    }
-    .delete-button:hover {
-       background: #fecaca;
-       }
+    button:hover { background: #1d4ed8; }
+    nav button { flex: 1; min-width: 130px; }
+    nav button.active { background: #163b91; }
+    .light-button { background: #dbeafe; color: #1d4ed8; }
+    .rating.active { background: #163b91; }
+    .light-button:hover { background: #bfdbfe; }
+    .delete-button { background: #fee2e2; color: #b91c1c; }
+    .delete-button:hover { background: #fecaca; }
 
     .tag {
       display: inline-block;
       background: #dbeafe;
-      color: #413fdb;
+      color: #1d4ed8;
       border-radius: 20px;
       padding: 4px 10px;
       font-size: 13px;
@@ -118,6 +103,20 @@
     .filters input { flex: 2; min-width: 200px; }
     .filters select { flex: 1; min-width: 150px; }
 
+  
+    #question-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      align-items: start;
+    }
+
+  
+    #question-list .question {
+      margin-bottom: 0;
+      min-width: 0;
+    }
+
     input, textarea, select {
       width: 100%;
       box-sizing: border-box;
@@ -140,4 +139,6 @@
       nav button { width: 100%; margin: 4px 0; }
       .filters { display: block; }
       .filters input, .filters select { margin-bottom: 10px; }
+      #question-list { grid-template-columns: 1fr; }
     }
+  
